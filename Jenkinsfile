@@ -14,11 +14,11 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Pull Docker Image') {
             steps {
                 script {
                     // Build Docker image using Docker command
-                    bat "docker build -t ${DOCKER_IMAGE_NAME} ."
+                    bat "docker pull ${DOCKER_IMAGE_NAME} "
                 }
             }
         }
