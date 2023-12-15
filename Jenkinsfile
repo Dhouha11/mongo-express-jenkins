@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     // Run Docker container using Docker command
-                    bat "docker run -p 8080:80 --name mongo_express -d ${DOCKER_IMAGE_NAME}"
+                    bat "docker run -p 8080:80 --name mongo_express_container -d ${DOCKER_IMAGE_NAME}"
                 }
             }
         }
@@ -37,8 +37,8 @@ pipeline {
         always {
             // Clean up (stop and remove the container) using Docker command
             script {
-                bat "docker stop mongo_express"
-                bat "docker rm mongo_express"
+                bat "docker stop mongo_express_container"
+                bat "docker rm mongo_express_container"
             }
         }
     }
