@@ -37,7 +37,7 @@ pipeline {
         always {
             // Clean up (stop and remove the container) using Docker command
             script {
-                bat "docker stop mongo_expressr"
+                bat "docker stop mongo_express"
                 bat "docker rm mongo_express"
             }
         }
